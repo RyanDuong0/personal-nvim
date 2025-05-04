@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 vim.keymap.set('n', '<leader>mr', function()
     vim.cmd([[%s/\r$//]])
