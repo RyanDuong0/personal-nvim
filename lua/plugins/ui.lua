@@ -9,7 +9,7 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "dracula",
+                    theme = "dracula"
                 },
             })
         end,
@@ -29,5 +29,17 @@ return {
             vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to the left window" })
             vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to the right window" })
         end,
+    },
+    {
+        "tpope/vim-commentary",
+    },
+    {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+            }
+        end,
+        dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
 }
