@@ -30,6 +30,7 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup("plugins")
 require("vim-options")
+require("autopairs-config")
 
 vim.cmd.colorscheme("catppuccin")
 
