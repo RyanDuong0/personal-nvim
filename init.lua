@@ -4,6 +4,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+vim.opt.termguicolors = true
+
 vim.keymap.set('n', '<leader>mr', function()
     vim.cmd([[%s/\r$//]])
 end, { desc = 'Removes leading ^M' })
@@ -31,6 +33,8 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup("plugins")
 require("vim-options")
 require("autopairs-config")
+require("bufferline").setup{}
+require("bufferline-remap")
 
 vim.cmd.colorscheme("catppuccin")
 
