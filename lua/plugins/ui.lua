@@ -47,4 +47,18 @@ return {
         version = "*",
         dependencies = "nvim-tree/nvim-web-devicons",
     },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",  -- updated API
+        opts = {
+            indent = {
+                char = "│",  -- or try "▏", "▎", "┆", etc.
+            },
+            scope = {
+                enabled = true,  -- this draws the scope indicator
+                show_start = false,
+                show_end = false,
+            },
+        }
+    },
 }
