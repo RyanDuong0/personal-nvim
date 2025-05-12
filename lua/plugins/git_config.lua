@@ -11,6 +11,10 @@ return {
 			"echasnovski/mini.pick", -- optional
 			"folke/snacks.nvim", -- optional
 		},
+		config = function()
+			vim.keymap.set("n", "<leader>nc", "<cmd>NeogitCommit<CR>", { desc = "Open NeogitCommit window" })
+			vim.keymap.set("n", "<leader>nl", "<cmd>NeogitLogCurrent<CR>", { desc = "Open NeogitLogCurrent window" })
+		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",
@@ -54,5 +58,31 @@ return {
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
 		"sindrets/diffview.nvim",
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+	},
+	{
+		"sindrets/diffview.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("diffview").setup({
+				use_icons = true, -- If you have a nerd font or devicons
+				enhanced_diff_hl = true,
+				view = {
+					merge_tool = {
+						layout = "diff3_mixed",
+						disable_diagnostics = true,
+					},
+				},
+				file_panel = {
+					win_config = {
+						position = "left", -- "left", "right", "top", "bottom"
+						width = 35,
+					},
+				},
+			})
+			local map = vim.keymap.set
+			map("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { desc = "Open DiffView" })
+			map("n", "<leader>dl", "<cmd>DiffviewClose<CR>", { desc = "Close DiffView" })
+			map("n", "<leader>df", "<cmd>DiffviewFileHistory<CR>", { desc = "File history" })
+		end,
 	},
 }
