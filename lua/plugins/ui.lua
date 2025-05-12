@@ -38,6 +38,7 @@ return {
 		event = "VimEnter",
 		config = function()
 			require("dashboard").setup({})
+			vim.keymap.set("n", "<leader>ds", "<cmd>Dashboard<CR>", { desc = "Starts Dashboard" })
 		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
